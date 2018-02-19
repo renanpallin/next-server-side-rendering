@@ -15,6 +15,10 @@ const Index = ({ posts }) => (
 				<CardText>
 					<RaisedButton fullWidth={true} primary={true}>
 						<Link href={`/post?id=${p.id}`} as={`/blog/${p.id}`}>
+							{/*
+								The author wraps this content with an `a` tag,
+								but I don't think this is necessary
+							*/}
 							Click to view posts!
 						</Link>
 					</RaisedButton>
