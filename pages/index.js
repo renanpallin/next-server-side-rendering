@@ -4,6 +4,7 @@ import withMui from '../shared/MUI/withMUI';
 import 'isomorphic-fetch';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Link from 'next/link';
 
 const Index = ({ posts }) => (
 	<div>
@@ -12,7 +13,11 @@ const Index = ({ posts }) => (
 			<Card key={p.id}>
 				<CardHeader title={p.title} />
 				<CardText>
-					<RaisedButton label="Click to view posts!" fullWidth={true} primary={true}/>
+					<RaisedButton fullWidth={true} primary={true}>
+						<Link href={`/post?id=${p.id}`} as={`/blog/${p.id}`}>
+							Click to view posts!
+						</Link>
+					</RaisedButton>
 				</CardText>
 			</Card>
 		))}
