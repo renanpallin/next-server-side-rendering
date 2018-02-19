@@ -16,10 +16,10 @@ const withMUI = CompoesedComponment => {
 		static async getInitialProps(context) {
 			const { req } = context;
 			const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
-			// const subProps = await CompoesedComponment.getInitialProps(context);
+			const subProps = await CompoesedComponment.getInitialProps(context);
 
 			return {
-				// ...subProps,
+				...subProps,
 				userAgent
 			}
 		}
