@@ -9,6 +9,15 @@ import Link from 'next/link';
 const Index = ({ posts }) => (
 	<div>
 		<Header />
+		<style jsx>
+		{`
+			.post-link {
+				text-decoration: none;
+				color: #fff;
+				font-size: 18px;
+			}
+		`}
+		</style>
 		{posts.map(p => (
 			<Card key={p.id}>
 				<CardHeader title={p.title} />
@@ -18,8 +27,10 @@ const Index = ({ posts }) => (
 							{/*
 								The author wraps this content with an `a` tag,
 								but I don't think this is necessary
+
+								Maybe for style...
 							*/}
-							Click to view posts!
+							<a className="post-link">Click to view posts!</a>
 						</Link>
 					</RaisedButton>
 				</CardText>
